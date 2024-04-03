@@ -1,3 +1,0 @@
-#def calculateDifference():
-#    spreadBinance =
-#    spreadBybit=
