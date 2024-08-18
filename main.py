@@ -5,6 +5,7 @@ import json
 BINANCE_WS_URL = "wss://stream.binance.com:9443/ws/btcusdt@trade"
 BYBIT_WS_URL = "wss://stream.bybit.com/realtime"
 
+
 async def binance_ws():
     async with websockets.connect(BINANCE_WS_URL) as websocket:
         while True:
@@ -13,6 +14,7 @@ async def binance_ws():
             price = float(data['p'])
             print(f"Binance BTC/USDT: {price}")
             # Add logic to store or process the price
+
 
 async def bybit_ws():
     async with websockets.connect(BYBIT_WS_URL) as websocket:
@@ -25,8 +27,10 @@ async def bybit_ws():
                 print(f"Bybit BTC/USD: {price}")
                 # Add logic to store or process the price
 
+
 async def main():
     await asyncio.gather(binance_ws(), bybit_ws())
+
 
 if __name__ == "__main__":
     asyncio.run(main())
